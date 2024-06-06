@@ -38,7 +38,7 @@ public class ImageToAvatar {
                         System.out.println("Transparent pixel within the circle");
                         return false;
                     }
-                    else if (Math.sqrt(Math.pow(i,2)+Math.pow(j,2)) <= circleRadius){ // If pixel is within the circle
+                    else if (Math.sqrt(Math.pow(i-255,2)+Math.pow(j-255,2)) <= circleRadius){ // If pixel is within the circle
                         int red = (pixel >> 16) & 0xff;
                         int green = (pixel >> 8) & 0xff;
                         int blue = pixel & 0xff;
