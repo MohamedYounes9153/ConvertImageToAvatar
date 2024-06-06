@@ -34,7 +34,7 @@ public class ImageToAvatar {
                 for(int j=0; j<512; j++){
                     pixel = image.getRGB(i,j);
                     int alpha = (pixel >> 24) & 0xff;
-                    if (alpha != (255 & 0xff) && Math.sqrt(Math.pow(i,2)+Math.pow(j,2)) <= circleRadius){ //If the pixel is within the circle (Norm of the vector from (0,0) to (i,j) <= circle radius) and is transparent
+                    if (alpha != (255 & 0xff) && Math.sqrt(Math.pow(i-255,2)+Math.pow(j-255,2)) <= circleRadius){ //If the pixel is within the circle (Norm of the vector from (0,0) to (i,j) <= circle radius) and is transparent
                         System.out.println("Transparent pixel within the circle");
                         return false;
                     }
